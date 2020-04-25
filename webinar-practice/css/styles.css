@@ -44,3 +44,8 @@ body {
   line-height: 16px;
   color: #e84545;
 }
+
+/*Footer*/
+.page-footer {
+  background-color: #3a3e64;
+}
