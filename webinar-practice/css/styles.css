@@ -1,6 +1,46 @@
+/*Все элементы внутри body с текстом унаследуют эти свойства кроме ссылок и еще некоторых*/
 body {
   font-family: "Raleway", "Arial", sans-serif;
   color: #6c7279;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 21px; /*высота строки с учетом отступов*/
+}
+.page-header {
+  background-color: #3a3e64;
+}
+/*верхняя панель навигации*/
+.site-navigation {
+  font-size: 13px;
+  list-style: none; /*уберет маркировку списка*/
+}
+.site-navigation a {
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none; /*уберет подчеркивания*/
+  line-height: 16px;
+}
+
+/*Features*/
+.features-list {
+  list-style: none;
+}
+.features-list-item h3 {
+  color: #2d3033;
+  line-height: 17px;
+}
+
+/*Features*/
+.team-list {
+  list-style: none;
+}
+.team-list-name {
+  font-size: 22px;
+  line-height: 26px;
+  color: #2d3033;
+}
+.team-list-occupation {
+  font-size: 13px;
+  line-height: 16px;
+  color: #e84545;
 }
