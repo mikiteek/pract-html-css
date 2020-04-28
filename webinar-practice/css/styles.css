@@ -26,11 +26,32 @@ body {
 .page-header {
   background-color: #3a3e64;
 }
+
+.site-logo {
+  /*ссылка стала по высоте как ее контент, - привилегии строчно-блочных элементов*/
+  display: inline-block;
+}
+
 /*верхняя панель навигации*/
 .site-navigation {
+  margin: 0;
+  padding: 0;
   font-size: 13px;
   list-style: none; /*уберет маркировку списка*/
 }
+.site-navigation li {
+  display: inline-block;
+  /*margin-right: 60px;*/
+}
+.site-navigation li:not(:last-child) {
+  /*тоже токо одним действием - выбрали все кроме последнего*/
+  margin-right: 60px; /*и дали им margin-right: 60px*/
+}
+/*необходимо сбросить margin последнего элемента списка после margin-right или
+.site-navigation li:last-child {
+  margin-right: 0;
+}
+*/
 .site-navigation a {
   color: #ffffff;
   font-weight: 700;
