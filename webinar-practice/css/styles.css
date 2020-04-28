@@ -16,28 +16,43 @@ body {
   font-size: 14px;
   line-height: 21px; /*высота строки с учетом отступов*/
 }
+img {
+  /*так картинки будут правильно себя вести*/
+  display: block;
+  max-width: 100%; /*чтобы картинка не растягивалась больше оригинального размера*/
+  height: auto;
+}
 
 .conteiner {
   width: 1170px;
   margin: 0 auto; /*явно указали чо вертикално 0, горизонтально auto - так правильно делать*/
-  background-color: teal; /*просто margin: auto - не хорошо в будущем будет*/
+  /*просто margin: auto - не хорошо в будущем будет*/
 }
 
 .page-header {
   background-color: #3a3e64;
 }
 
+.page-nav {
+  padding: 38px 0;
+}
+
 .site-logo {
   /*ссылка стала по высоте как ее контент, - привилегии строчно-блочных элементов*/
   display: inline-block;
+  vertical-align: middle;
 }
 
 /*верхняя панель навигации*/
 .site-navigation {
+  display: inline-block;
+  width: 977px;
   margin: 0;
   padding: 0;
   font-size: 13px;
   list-style: none; /*уберет маркировку списка*/
+  text-align: right;
+  vertical-align: middle;
 }
 .site-navigation li {
   display: inline-block;
@@ -59,7 +74,8 @@ body {
   text-decoration: none; /*уберет подчеркивания*/
   line-height: 16px;
 }
-.site-navigation a:hover {
+.site-navigation a:hover,
+.site-navigation a:focus {
   color: #e84545;
 }
 
