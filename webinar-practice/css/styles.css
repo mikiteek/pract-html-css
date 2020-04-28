@@ -1,3 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+/*box-sizing: inherit значит по умолчанию будет наследовать от hmtl, но если где то 
+переопределим box-sizing для какого то блока, то все, что внутри него будет 
+наследовать то, что переопределим*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 /*Все элементы внутри body с текстом унаследуют эти свойства кроме ссылок и еще некоторых*/
 body {
   font-family: "Raleway", "Arial", sans-serif;
@@ -5,6 +16,13 @@ body {
   font-size: 14px;
   line-height: 21px; /*высота строки с учетом отступов*/
 }
+
+.conteiner {
+  width: 1170px;
+  margin: 0 auto; /*явно указали чо вертикално 0, горизонтально auto - так правильно делать*/
+  background-color: teal; /*просто margin: auto - не хорошо в будущем будет*/
+}
+
 .page-header {
   background-color: #3a3e64;
 }
