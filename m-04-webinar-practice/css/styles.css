@@ -23,6 +23,12 @@ img {
   height: auto;
 }
 
+.clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
 .conteiner {
   width: 1170px;
   margin: 0 auto; /*явно указали чо вертикално 0, горизонтально auto - так правильно делать*/
@@ -41,22 +47,22 @@ img {
 .site-logo {
   /*ссылка стала по высоте как ее контент, - привилегии строчно-блочных элементов*/
   display: inline-block;
-  vertical-align: middle;
 }
 
 /*верхняя панель навигации*/
 .site-navigation {
-  display: inline-block;
-  vertical-align: middle;
-  width: 977px;
+  float: right;
+  width: 600px;
   margin: 0;
+  margin-top: 8px;
   padding: 0;
   font-size: 13px;
   list-style: none; /*уберет маркировку списка*/
-  text-align: right;
 }
 .site-navigation li {
-  display: inline-block;
+  float: left;
+
+  
 }
 .site-navigation li:not(:last-child) {
   /*тоже токо одним действием - выбрали все кроме последнего*/
@@ -89,16 +95,44 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0;
 }
 .features-list-item {
+  float: left;
   width: 370px;
-  display: inline-block;
   margin-right: 30px;
   margin-bottom: 72px;
   padding: 0 38px;
   text-align: center;
 }
+
+.features-list-item::before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin-bottom: 34px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-tools::before {
+  background-image: url("../img/icons/features/icon-tools.png");
+}
+.icon-computer::before {
+  background-image: url("../img/icons/features/icon-computer.png");
+}
+.icon-bulb::before {
+  background-image: url("../img/icons/features/icon-bulb.png");
+}
+.icon-atom::before {
+  background-image: url("../img/icons/features/icon-atom.png");
+}
+.icon-case::before {
+  background-image: url("../img/icons/features/icon-case.png");
+}
+.icon-download::before {
+  background-image: url("../img/icons/features/icon-download.png");
+}
+
 /* .features-list-item:not(:nth-child(3n)) {
   margin-right: 30;
 } */
@@ -126,10 +160,9 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0;
 }
 .team-list-item {
-  display: inline-block;
+  float: left;
   width: 270px;
   margin-right: 30px;
 }
@@ -145,6 +178,7 @@ img {
   font-size: 13px;
   line-height: 16px;
   color: #e84545;
+  text-transform: uppercase;
 }
 .team-list-about {
   font-size: 14px;
@@ -153,16 +187,19 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
 }
 .team-list-socials li {
-  display: inline-block;
+  float: left;
+  margin-right: 4px;
+
+}
+.team-list-item li:last-child {
+  margin-right: 0;
 }
 .team-list-socials a {
   display: block;
   width: 40px;
   height: 40px;
-  border-style: solid;
   border: 1px solid rgb(232, 236, 238);
   background-repeat: no-repeat;
   background-position: center;
@@ -172,13 +209,13 @@ img {
   background-color: #e84545;
 }
 .icon-facebook {
-  background-image: url("../img/icon-facebook.png");
+  background-image: url("../img/icons/social/icon-facebook.png");
 }
 .icon-twitter {
-  background-image: url("../img/icon-twitter.png");
+  background-image: url("../img/icons/social/icon-twitter.png");
 }
 .icon-linkedin {
-  background-image: url("../img/icon-linkedin.png");
+  background-image: url("../img/icons/social/icon-linkedin.png");
 }
 /*Footer*/
 .page-footer {
