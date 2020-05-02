@@ -5,3 +5,12 @@
   font-size: 100%;
   box-sizing: border-box;
 }
+.my-h1 {
+  font-size: 48px;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-weight: 600;
+  letter-spacing: 20px;
+  
+  
+}
