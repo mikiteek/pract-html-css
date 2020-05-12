@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.parent {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: #212121;
+}
+
+.child {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  /* % посчитает от размера по оси самого этого блока*/
+  transform: translateY(-50%);
+  height: 150px;
+  width: 150px;
+  background-color: palevioletred;
+}
