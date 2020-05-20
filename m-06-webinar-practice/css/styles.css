@@ -45,6 +45,21 @@ img {
 .site-logo {
   /*ссылка стала по высоте как ее контент, - привилегии строчно-блочных элементов*/
   display: inline-block;
+  animation: logo-appear 1s linear;
+}
+@keyframes logo-appear {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*верхняя панель навигации*/
@@ -60,11 +75,12 @@ img {
 
 .site-navigation a {
   display: block;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none; /*уберет подчеркивания*/
   line-height: 16px;
+  transition: color 0.2s linear;
 }
 .site-navigation a:hover,
 .site-navigation a:focus {
@@ -180,14 +196,18 @@ img {
   width: 270px;
   padding: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s ease-in, box-shadow 0.5s linear;
 }
 
 .team-list-item:hover {
+  /*поставили лишке, и все внутри него получит scale*/
+  transform: scale(1.05);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .team-list-image {
   filter: grayscale(1);
+  transition: filter 0.2s easy-out;
 }
 
 /*применить к .team-list-image когда .team-list-item в состоянии hover*/
@@ -228,6 +248,7 @@ img {
   border: 1px solid rgb(232, 236, 238);
   background-repeat: no-repeat;
   background-position: center;
+  transition: background-color 0.2s linear;
 }
 .team-list-socials a:hover,
 .team-list-socials a:focus {
