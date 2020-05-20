@@ -36,7 +36,10 @@ img {
 }
 
 .page-nav {
-  padding: 38px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
 }
 
 .site-logo {
@@ -46,24 +49,15 @@ img {
 
 /*верхняя панель навигации*/
 .site-navigation {
+  display: flex;
+  justify-content: space-between;
   width: 600px;
   margin: 0;
-  margin-top: 8px;
   padding: 0;
   font-size: 13px;
   list-style: none; /*уберет маркировку списка*/
 }
-.site-navigation li {
-}
-.site-navigation li:not(:last-child) {
-  /*тоже токо одним действием - выбрали все кроме последнего*/
-  margin-right: 60px; /*и дали им margin-right: 60px*/
-}
-/*необходимо сбросить margin последнего элемента списка после margin-right или
-.site-navigation li:last-child {
-  margin-right: 0;
-}
-*/
+
 .site-navigation a {
   display: block;
   color: #ffffff;
@@ -78,6 +72,10 @@ img {
 }
 /* BANNER */
 .banner {
+  display: flex;
+  align-items: center;
+  /*если не будет conteiner у него, то на всякий случай центрируем*/
+  justify-content: center;
   min-height: 600px;
   margin-bottom: 120px;
   background-image: linear-gradient(
@@ -91,19 +89,30 @@ img {
   background-size: cover;
   background-position: center;
 }
+.slider {
+  height: 100px;
+  background-color: teal;
+}
 /*Features Section*/
 .features {
   margin-bottom: 120px;
 }
 /*features list*/
 .features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .features-list-item {
-  width: 370px;
-  margin-right: 30px;
+  flex-basis: 370px;
+  /*запретим расти*/
+  flex-grow: 0;
+  /*запретим сжиматься*/
+  flex-shrink: 0;
+  /*можно было записать все вместе как flex: 0 0 370px*/
   margin-bottom: 72px;
   padding: 0 38px;
   text-align: center;
@@ -161,23 +170,20 @@ img {
   margin-bottom: 120px;
 }
 .team-list {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .team-list-item {
   width: 270px;
-  margin-right: 30px;
   padding: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .team-list-item:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.team-list-item:last-child {
-  margin-right: 0;
 }
 
 .team-list-image {
@@ -204,6 +210,7 @@ img {
   font-size: 14px;
 }
 .team-list-socials {
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
