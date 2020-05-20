@@ -246,6 +246,12 @@ img {
 .page-footer {
   background-color: #3a3e64;
 }
+.page-footer .conteiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 246px;
+}
 .download-buttom {
   border: none;
   margin: 0;
